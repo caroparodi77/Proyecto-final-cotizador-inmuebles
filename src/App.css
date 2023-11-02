@@ -1,0 +1,74 @@
+/* html {
+  background-color: #F4CE14;
+} */
+
+#root {
+  
+  width:100vw;
+  background-color: #F4CE14;
+  
+}
+
+.header {
+ 
+  background-color: #454546;
+  color: #fff;
+  display: flex;
+  
+  justify-content: center;
+}
+
+.subtitulo {
+  display: flex;
+  justify-content: center;
+}
+
+
+.container-cotizador {
+  display: flex;
+  justify-content: center;
+  background-color: #fff;
+}
+
+select, input {
+    
+  width: 70vw;
+  margin-right: 15vw;
+  margin-left: 15vw;
+}
+
+.importe {
+  display: flex;
+  color: blueviolet;
+  font-size: x-large;
+  font-weight: 700;
+  align-items: center;
+  justify-content: center;
+}
+
+label { 
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+.subtitulos {
+
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.container-button {
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+span {
+
+  font-size: xx-large;
+  text-decoration: none;
+ 
+}
+
+
