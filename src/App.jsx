@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Header from "./componentes/Header"
 import Formulario from "./componentes/Formulario"
 import Historial from "./componentes/Historial"
-import Select from "./componentes/SelectProp"
+
 
 
 import './App.css'
