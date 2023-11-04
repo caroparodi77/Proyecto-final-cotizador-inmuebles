@@ -59,9 +59,6 @@ function Formulario() {
           <div className="importe">
             <p className="importe">
               Precio estimado: $ <span id="valorPoliza">{cotizacion || '0.00'}</span>
-              <span className="guardar ocultar" title="Guardar en historial">
-                💾
-              </span>
             </p>
           </div>
           <div className="historial">

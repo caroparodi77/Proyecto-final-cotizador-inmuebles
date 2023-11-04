@@ -4,6 +4,9 @@ import { Link } from "react-router-dom";
 
 function Historial() {
     const [historialCotizaciones, setHistorialCotizaciones] = useState([]);
+    const historial = JSON.parse(
+        window.localStorage.getItem("historial") || "[]"
+      );
 
     useEffect(() => {
         const cargarHistorial = () => {
@@ -16,12 +19,12 @@ function Historial() {
 
     const retornoTablaHTML = (fila) => {
         return (
-            <tr key={fila.fechaCotizacion}>
-                <td>{fila.fechaCotizacion}</td>
+            <tr key={fila.fecha}>
+                <td>{fila.fecha}</td>
                 <td>{fila.propiedad}</td>
                 <td>{fila.ubicacion}</td>
-                <td>{fila.metrosCuadrados}</td>
-                <td>$ {fila.poliza.toLocaleString()}</td>
+                <td>{fila.metros2}</td>
+                <td>$ {fila.cotizacion}</td>
             </tr>
         );
     };
@@ -40,11 +43,11 @@ function Historial() {
             </thead>
      
         <tbody>
-            {historialCotizaciones.map((fila) => retornoTablaHTML(fila))}
+            {historial.map((fila) => retornoTablaHTML(fila))}
             </tbody>
             </table>
             <div className="container-button">
-                <Link to="/"><button class="button button-outline">VOLVER</button></Link>
+                <Link to="/"><button className="button button-outline">VOLVER</button></Link>
             </div>
         </>
     );

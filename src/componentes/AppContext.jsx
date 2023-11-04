@@ -4,7 +4,7 @@ export const AppContext = createContext();
 
 export const AppContextProvider = ({ children }) => {
   const [form, setForm] = useState({});
-  const [cotizacion, setCotizacion] = useState( )
+  const [cotizacion, setCotizacion] = useState();
   const [propiedades, setPropiedades] = useState([]);
 
   useEffect(() => {
@@ -21,7 +21,6 @@ export const AppContextProvider = ({ children }) => {
       .then((todos) => setUbicaciones(todos));
   }, []);
 
-  
   const handleSelect = useCallback(
     ({ target: { value, name } }) => {
       const array = name === "propiedades" ? propiedades : ubicaciones;
@@ -31,7 +30,6 @@ export const AppContextProvider = ({ children }) => {
     [form, propiedades, ubicaciones]
   );
 
-
   const handleChange = useCallback(
     ({ target: { value } }) => {
       setForm({ ...form, metros: Number(value) });
@@ -40,10 +38,23 @@ export const AppContextProvider = ({ children }) => {
   );
 
   const handleSubmit = useCallback(() => {
-    const resultado = 
-      35.86 * form.propiedades.factor * form.ubicaciones.factor * form.metros
-    setCotizacion(resultado.toFixed(2))
-    console.log (form,resultado);
+    const resultado =
+      35.86 * form.propiedades.factor * form.ubicaciones.factor * form.metros;
+    const historial = JSON.parse(
+      window.localStorage.getItem("historial") || "[]"
+    );
+    window.localStorage.setItem("historial", JSON.stringify([
+      ...historial,
+      {
+        fecha: new Date(),
+        propiedad: form.propiedades.tipo,
+        ubicacion: form.ubicaciones.tipo,
+        metros2: form.metros,
+        cotizacion: resultado.toFixed(2),
+      },
+    ]));
+    setCotizacion(resultado.toFixed(2));
+    console.log(form, resultado);
   }, [form]);
 
   const data = {
