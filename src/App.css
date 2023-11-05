@@ -11,11 +11,9 @@
 }
 
 .header {
- 
   background-color: #454546;
   color: #fff;
   display: flex;
-  
   justify-content: center;
 }
 
@@ -40,7 +38,7 @@ select, input {
 
 .importe {
   display: flex;
-  color: blueviolet;
+  color: #454546;
   font-size: x-large;
   font-weight: 700;
   align-items: center;
@@ -52,14 +50,18 @@ select, input {
   justify-content: center;
   width: 100%;
   padding: 6px;
-  border-radius: 25px;}
+  border-radius: 25px;
+  text-decoration: none;
+  margin-bottom: 20px;
+}
   
 span {
 
   font-size: xx-large;
   text-decoration: none;
- 
+  color: #454546; 
 }
+
 
 table table-hover {
   display: flex;
@@ -70,6 +72,9 @@ label {
   display: flex;
   justify-content: center;
   margin-bottom: 10px;
+  margin-top: 10px;
+  font-weight: 500;
+  font-size: 20px;
 }
 .subtitulos {
 

@@ -46,7 +46,7 @@ export const AppContextProvider = ({ children }) => {
     window.localStorage.setItem("historial", JSON.stringify([
       ...historial,
       {
-        fecha: new Date(),
+        fecha: new Date().toLocaleString(),
         propiedad: form.propiedades.tipo,
         ubicacion: form.ubicaciones.tipo,
         metros2: form.metros,

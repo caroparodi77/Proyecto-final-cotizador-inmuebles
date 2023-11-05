@@ -22,7 +22,7 @@ function Formulario() {
             onChange={handleSelect}
             required
           >
-            <option>Seleccione Propiedad</option>
+            <option>Propiedad</option>
             {propiedades.map((propiedad) => (
               <option key={propiedad.id} value={propiedad.id}>
                 {propiedad.tipo}
@@ -37,7 +37,7 @@ function Formulario() {
             onChange={handleSelect}
             required
           >
-            <option>Seleccione Ubicación</option>
+            <option>Ubicación</option>
             {ubicaciones.map((ubicacion) => (
               <option key={ubicacion.id} value={ubicacion.id}>
                 {ubicacion.tipo}
